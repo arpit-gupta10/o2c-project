@@ -1,0 +1,12 @@
+<h2>Checkout</h2>
+
+<div *ngIf="cartItems.length === 0">No items in cart!</div>
+
+<ul *ngIf="cartItems.length > 0">
+  <li *ngFor="let sku of cartItems">{{ sku }}</li>
+</ul>
+
+<button (click)="placeOrder()" [disabled]="cartItems.length === 0">Place Order</button>
+
+<div *ngIf="successMessage" style="color:green">{{ successMessage }}</div>
+<div *ngIf="errorMessage" style="color:red">{{ errorMessage }}</div>

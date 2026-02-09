@@ -1,0 +1,11 @@
+<h2>Payments</h2>
+
+<div>
+  <label>Order ID:</label>
+  <input [(ngModel)]="orderId" placeholder="Enter Order ID" />
+</div>
+
+<button (click)="payOrder()" [disabled]="!orderId">Pay Now</button>
+
+<div *ngIf="successMessage" style="color:green">{{ successMessage }}</div>
+<div *ngIf="errorMessage" style="color:red">{{ errorMessage }}</div>

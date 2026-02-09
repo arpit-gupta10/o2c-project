@@ -1,0 +1,16 @@
+<h2>Shopping Cart</h2>
+
+<ul *ngIf="cartItems.length > 0; else emptyCart">
+  <li *ngFor="let item of cartItems">
+    {{ item }}
+    <!-- <button (click)="removeItem(item)">Remove</button> -->
+  </li>
+</ul>
+
+<ng-template #emptyCart>
+  <p>Your cart is empty 😢</p>
+</ng-template>
+
+<button (click)="checkout()" [disabled]="cartItems.length === 0">
+  Proceed to Checkout
+</button>

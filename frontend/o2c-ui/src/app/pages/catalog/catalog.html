@@ -1,0 +1,10 @@
+<h2>Catalog!</h2>
+
+<!-- Async pipe use karke direct Observable bind kar rahe -->
+<ul>
+  <li *ngFor="let p of products$ | async">
+    {{ p.name }} - {{ p.price }} -
+    <span *ngIf="p.available; else out">{{ p.available ? 'In stock' : 'Out of stock' }}</span>
+    <ng-template #out>Out of stock</ng-template>
+  </li>
+</ul>
